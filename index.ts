@@ -10,14 +10,24 @@ type UserType = {
   email: string
 }
 
-const user1: UserType = {
+const user: UserType = {
   name: 'Eugeni',
   age: 35,
   email: 'ewgenbi@gmail.com'
 };
 
-app.get( '/route', ( req: Request, res: Response ) => {
-  res.json( user1 );
+app.get( '/napp', ( req: Request, res: Response ) => {
+  if ( req.query.api_key !== '123' ) {
+    res.statusCode = 403;
+    res.send();
+  }
+  const api_key = 'Api_key: ' + req.query.api_key + '\n',
+      page = 'Page: ' + req.query.page + '\n',
+      ip = 'Your ip is: ' + req.ip + '\n',
+      response = [ api_key, page, ip ].join( '<br/>' );
+  res.send( response );
 } );
 
-app.listen( PORT );
+app.listen( PORT, () => {
+  console.log( `Application running on port ${ PORT }` );
+} );
