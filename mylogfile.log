@@ -1,0 +1,22 @@
+2021-03-31 13:30:54.520 INFO  Info Log 
+2021-03-31 13:32:11.350 INFO  Info Log 
+2021-03-31 13:32:11.350 WARN  Warn Log 
+2021-03-31 13:33:05.232 INFO  Info Log 
+2021-03-31 13:33:05.232 WARN  Warn Log 
+2021-03-31 13:33:05.232 INFO  {"name":"Eugeni","age":35,"email":"ewgenbi@gmail.com"} 
+2021-03-31 13:34:40.435 INFO  {"name":"Eugeni","age":35,"email":"ewgenbi@gmail.com"} 
+2021-03-31 13:35:46.698 INFO  Application started on port 3000 
+2021-03-31 13:43:25.522 INFO  Application started on port 3000 
+2021-03-31 13:43:36.655 INFO  Request from ::1. Parameters:[object Object] 
+2021-03-31 13:44:10.548 INFO  Application started on port 3000 
+2021-03-31 13:44:11.482 INFO  Request from ::1. Parameters:{"name":"Ewgeni","email":"ewgenbi@gmail.com"} 
+2021-03-31 13:44:52 INFO  Application started on port 3000 
+2021-03-31 13:44:53 INFO  Request from ::1. Parameters:{"name":"Ewgeni","email":"ewgenbi@gmail.com"} 
+2021-03-31 13:46:00 INFO  Application started on port 3000 
+2021-03-31 13:46:01 INFO  Request from ::1. Parameters: {"name":"Ewgeni","email":"ewgenbi@gmail.com"}id: 123456 
+2021-03-31 13:46:14 INFO  Application started on port 3000 
+2021-03-31 13:46:15 INFO  Request from ::1. Parameters: {"name":"Ewgeni","email":"ewgenbi@gmail.com"} id: 123456 
+2021-03-31 13:47:16 INFO  Application started on port 3000 
+2021-03-31 14:00:16 INFO  Application started on port 3000 
+2021-03-31 16:11:05 INFO  Application started on port 3000 
+2021-03-31 16:11:45 INFO  Request from ::1. Parameters: {"name":"Ewgeni","email":"ewgenbi@gmail.com"}, id: 123456 

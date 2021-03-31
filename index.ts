@@ -1,5 +1,14 @@
 import express, { Express, Request, Response } from 'express';
+import bodyParser from 'body-parser';
+//@ts-ignore
+import Logger from 'simple-node-logger';
 
+const log_options = {
+  logFilePath: 'mylogfile.log',
+  timestampFormat: 'YYYY-MM-DD HH:mm:ss'
+};
+
+const log = Logger.createSimpleLogger( log_options );
 const app: Express = express();
 
 const PORT = process.env.PORT || 3000;
@@ -16,6 +25,14 @@ const user: UserType = {
   email: 'ewgenbi@gmail.com'
 };
 
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded( { extended: true } ) );
+
+app.post( '/napp/:id', ( req, res ) => {
+  log.info( `Request from ${ req.ip }. Parameters: `, req.body, `, id: `, req.params.id );
+  res.json( req.body );
+} );
+
 app.get( '/napp', ( req: Request, res: Response ) => {
   if ( req.query.api_key !== '123' ) {
     res.statusCode = 403;
@@ -29,5 +46,5 @@ app.get( '/napp', ( req: Request, res: Response ) => {
 } );
 
 app.listen( PORT, () => {
-  console.log( `Application running on port ${ PORT }` );
+  log.info( `Application started on port ${ PORT }` );
 } );
