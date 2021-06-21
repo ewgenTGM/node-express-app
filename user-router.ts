@@ -1,59 +1,100 @@
 import {Router} from 'express';
-import {v1} from 'uuid';
 import {UserType} from './models/userModel';
 import {ResponseModel} from './models/ResponseModel';
+import {FakeUserRepositoryClass, IUserRepository} from './DAL/FakeUserRepositoryClass';
 
 const userRouter = Router();
 
+const repository: IUserRepository = new FakeUserRepositoryClass();
+
+userRouter.get('/', (req, res) => {
+  const response = new ResponseModel<Array<UserType>>();
+  try {
+    response.data = repository.getAllUsers();
+  } catch (e) {
+    response.errors.push(e.message);
+    response.success = false;
+  } finally {
+    res.json(response);
+  }
+});
+
 userRouter.get('/:id', (req, res) => {
-  const id = req.params['id'];
-  console.log(id);
-  res.status(200);
-  const user: UserType = {
-    id,
-    name: 'Eugene',
-    age: 25,
-    email: 'user@mail.com'
-  };
-  res.send(user);
+  const response = new ResponseModel<UserType>();
+  try {
+    const {id} = req.params;
+    if (id.trim() === '') {
+      response.errors.push('Bad parameter "id"');
+    } else {
+      const user = repository.getUserById(id);
+      if (user) {
+        response.data = user;
+      } else {
+        response.success = false;
+        response.errors.push(`User with id ${id} not found`);
+      }
+    }
+  } catch (e) {
+    response.errors.push(e.message);
+    response.success = false;
+  } finally {
+    res.json(response);
+  }
 });
 
 userRouter.post('/', (req, res) => {
-  const {name, age, email} = req.body;
-  const user: UserType = {id: v1(), name, age, email};
-  res.status(201).send(user);
-});
+  const response = new ResponseModel<UserType>();
+  try {
+    const {name, age, email} = req.body;
+    const user = repository.addUser({name, age, email});
+    response.data = user;
+  } catch (e) {
+    response.success = false;
+    response.errors.push(e.message);
+  } finally {
+    res.json(response);
+  }
 
-// userRouter.delete('/:id', (req, res) => {
-//   const id = req.params['id'];
-//   if (Math.random() > 0.5) {
-//     res.status(404).send({message: `User ${id} not found`});
-//   } else {
-//     res.status(202).send({message: `User ${id} deleted`});
-//   }
-// });
+});
 
 userRouter.delete('/:id', (req, res) => {
   const response = new ResponseModel<string>();
-  const id = req.params['id'];
   try {
-    if (Math.random() > 0.5) {
+    const {id} = req.params;
+    if (repository.deleteUser(id)) {
       response.data = `User ${id} deleted`;
-      res.status(202).json(response);
     } else {
-      throw new Error(`User ${id} not found`);
+      response.data = `User ${id} not found`;
+      response.success = false;
     }
   } catch (e) {
     response.success = false;
     response.errors.push(e.message);
-    res.status(404).json(response);
+  } finally {
+    res.json(response);
   }
-});
+})
+;
 
-userRouter.put('/:id', (req, res) => {
-    const {name, age, email} = req.body;
-    const id = req.params['id'];
-    res.status(202).send({id, name, age, email});
+userRouter.patch('/:id', (req, res) => {
+    const response = new ResponseModel<UserType>();
+    try {
+      const {name, age, email} = req.body;
+      const {id} = req.params;
+      const user = repository.updateUser(id, {name, age, email});
+      if (user) {
+        response.data = user;
+      } else {
+        response.success = false;
+        response.errors.push(`User ${id} not found`);
+      }
+
+    } catch (e) {
+      response.success = false;
+      response.errors.push(e.message);
+    } finally {
+      res.json(response);
+    }
   }
 );
 
