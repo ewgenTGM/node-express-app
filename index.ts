@@ -5,7 +5,9 @@ import bodyParser from 'body-parser';
 import Logger from 'simple-node-logger';
 import userRouter from './user-router';
 import {UserType} from './models/userModel';
+import {config} from 'dotenv';
 
+config();
 const log_options = {
   logFilePath: 'mylogfile.log',
   timestampFormat: 'YYYY-MM-DD HH:mm:ss'
@@ -15,8 +17,6 @@ const log = Logger.createSimpleLogger(log_options);
 const app: Express = express();
 
 const PORT = process.env.PORT || 3000;
-
-
 
 const user: UserType = {
   id: 'bfd',
