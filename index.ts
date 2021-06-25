@@ -7,7 +7,7 @@ import userRouter from './routers/user-router';
 import config from 'config';
 import mongoose from 'mongoose';
 import defaultRouter from './routers/default-router';
-import {registerRouter} from './routers/register-router';
+import {authRouter} from './routers/authRouter';
 
 const log_options = {
   logFilePath: 'mylogfile.log',
@@ -23,7 +23,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/user', userRouter);
-app.use('/register', registerRouter);
+app.use('/auth', authRouter);
 app.use(defaultRouter);
 
 async function start() {

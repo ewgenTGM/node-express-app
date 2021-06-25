@@ -1,7 +1,7 @@
 import {Request, Response, Router} from 'express';
-import {UserType} from '../models/userModel';
 import {ResponseModel} from '../models/ResponseModel';
 import {UserRepositoryClass, IUserRepository} from '../DAL/UserRepositoryClass';
+import {UserType} from '../models/User';
 
 const userRouter = Router();
 
@@ -9,23 +9,8 @@ const repository: IUserRepository = new UserRepositoryClass();
 
 userRouter.get('/', getAllUser);
 userRouter.get('/:id', getUser);
-userRouter.post('/', addUser);
 userRouter.delete('/:id', deleteUser);
 userRouter.patch('/:id', updateUser);
-
-async function addUser(req: Request, res: Response) {
-  const response = new ResponseModel<UserType>();
-  try {
-    const {name, age, email} = req.body;
-    const user = await repository.addUser({name, age, email});
-    response.data = user;
-  } catch (e) {
-    response.success = false;
-    response.errors.push(e.message);
-  } finally {
-    res.json(response);
-  }
-}
 
 async function deleteUser(req: Request, res: Response) {
   const response = new ResponseModel<string>();
@@ -48,10 +33,10 @@ async function deleteUser(req: Request, res: Response) {
 async function updateUser(req: Request, res: Response) {
   const response = new ResponseModel<UserType>();
   try {
-    const {name, age, email} = req.body;
+    const {email} = req.body;
     const {id} = req.params;
     console.log(id);
-    const user = await repository.updateUser(id, {name, age, email});
+    const user = await repository.updateUser(id, {email});
     if (user) {
       response.data = user;
     } else {

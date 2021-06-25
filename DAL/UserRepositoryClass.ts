@@ -1,17 +1,25 @@
-import {UserType} from '../models/userModel';
-import {v1} from 'uuid';
-import {User} from '../models/User';
+import {User, UserType} from '../models/User';
 
 export interface IUserRepository {
   getUserById: (id: string) => Promise<UserType | null>
+  getUserByEmail: (email: string) => Promise<UserType | null>
   getAllUsers: () => Promise<Array<UserType> | null>
-  addUser: (user: UserType) => Promise<UserType | null>
   updateUser: (id: string, user: Partial<UserType>) => Promise<UserType | null>
   deleteUser: (id: string) => Promise<boolean>
 }
 
 export class UserRepositoryClass implements IUserRepository {
   constructor() {
+  }
+
+  async getUserByEmail(email: string) {
+    try {
+      const user = await User.findOne({email});
+      return user;
+    } catch (e) {
+      throw new Error(e.message);
+    }
+    return null;
   }
 
   async deleteUser(id: string) {
@@ -22,19 +30,6 @@ export class UserRepositoryClass implements IUserRepository {
       return false;
     }
   };
-
-  async addUser(user: UserType) {
-    if (await User.findOne({email: user.email})) {
-      return null;
-    }
-    const newUser = new User({...user});
-    try {
-      await newUser.save();
-      return newUser;
-    } catch {
-      return null;
-    }
-  }
 
   async getAllUsers() {
     const users = await User.find();
