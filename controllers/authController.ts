@@ -1,13 +1,18 @@
 import {Request, Response} from 'express';
 import {ResponseModel} from '../models/ResponseModel';
 import {validationResult} from 'express-validator';
-import {User} from '../models/User';
+import {User, UserType} from '../models/User';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import config from 'config';
 
+type TokenPayloadType = {
+    id: string
+    email: string
+}
+
 function generateAccessToken(id: string, email: string) {
-    const payload = {id, email};
+    const payload: TokenPayloadType = {id, email};
     return jwt.sign(payload, config.get('SECRET_KEY'), {expiresIn: '24h'});
 }
 
@@ -41,7 +46,7 @@ class AuthController {
     }
 
     async login(req: Request, res: Response) {
-        const response = new ResponseModel<any>();
+        const response = new ResponseModel<{token: string}>();
         try {
             const {email, password} = req.body;
             const user = await User.findOne({email});
@@ -58,7 +63,7 @@ class AuthController {
             }
             const token = generateAccessToken(user._id, user.email);
             response.data = {token};
-            response.messages.push("Login success");
+            response.messages.push('Login success');
             res.json(response);
         } catch (e) {
             response.errors.push(e.message);
@@ -67,9 +72,15 @@ class AuthController {
     }
 
     async me(req: Request, res: Response) {
-        const response = new ResponseModel<any>();
+        const response = new ResponseModel<UserType>();
         try {
-
+            const token = req.headers.authorization?.split(' ')[1];
+            if (!token) {
+                response.messages.push('No auth token');
+                response.success = false;
+                return res.json(response);
+            }
+            console.log(await jwt.decode(token));
         } catch (e) {
             response.errors.push(e.message);
             res.status(400).json(response);

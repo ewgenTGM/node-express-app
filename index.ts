@@ -3,10 +3,10 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 //@ts-ignore
 import Logger from 'simple-node-logger';
-import userRouter from './routers/user-router';
+import userRouter from './routers/userRouter';
 import config from 'config';
 import mongoose from 'mongoose';
-import defaultRouter from './routers/default-router';
+import defaultRouter from './routers/defaultRouter';
 import {authRouter} from './routers/authRouter';
 
 const log_options = {
@@ -20,8 +20,9 @@ const app: Express = express();
 const PORT = process.env.PORT || config.get('PORT');
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json())
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use(defaultRouter);
