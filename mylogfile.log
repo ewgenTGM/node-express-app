@@ -325,3 +325,240 @@
 2021-06-25 16:22:42 INFO  Application started on port 3001 
 2021-06-25 16:26:01 INFO  MongoDB is connected 
 2021-06-25 16:26:01 INFO  Application started on port 3001 
+2021-06-28 08:18:20 INFO  MongoDB is connected 
+2021-06-28 08:18:20 INFO  Application started on port 3001 
+2021-06-28 08:23:21 INFO  MongoDB is connected 
+2021-06-28 08:23:21 INFO  Application started on port 3001 
+2021-06-28 08:24:03 INFO  MongoDB is connected 
+2021-06-28 08:24:03 INFO  Application started on port 3001 
+2021-06-28 08:25:24 INFO  MongoDB is connected 
+2021-06-28 08:25:24 INFO  Application started on port 3001 
+2021-06-28 08:27:13 INFO  MongoDB is connected 
+2021-06-28 08:27:13 INFO  Application started on port 3001 
+2021-06-28 08:28:21 INFO  MongoDB is connected 
+2021-06-28 08:28:21 INFO  Application started on port 3001 
+2021-06-28 08:29:19 INFO  MongoDB is connected 
+2021-06-28 08:29:19 INFO  Application started on port 3001 
+2021-06-28 08:31:00 INFO  MongoDB is connected 
+2021-06-28 08:31:00 INFO  Application started on port 3001 
+2021-06-28 08:32:06 INFO  MongoDB is connected 
+2021-06-28 08:32:06 INFO  Application started on port 3001 
+2021-06-28 08:32:45 INFO  MongoDB is connected 
+2021-06-28 08:32:45 INFO  Application started on port 3001 
+2021-06-28 08:33:36 INFO  MongoDB is connected 
+2021-06-28 08:33:36 INFO  Application started on port 3001 
+2021-06-28 08:36:21 INFO  MongoDB is connected 
+2021-06-28 08:36:21 INFO  Application started on port 3001 
+2021-06-29 08:14:52 INFO  MongoDB is connected 
+2021-06-29 08:14:52 INFO  Application started on port 3001 
+2021-06-29 08:33:55 INFO  MongoDB is connected 
+2021-06-29 08:33:55 INFO  Application started on port 3001 
+2021-06-29 08:37:21 INFO  MongoDB is connected 
+2021-06-29 08:37:21 INFO  Application started on port 3001 
+2021-06-29 08:38:59 INFO  MongoDB is connected 
+2021-06-29 08:38:59 INFO  Application started on port 3001 
+2021-06-29 08:39:21 INFO  MongoDB is connected 
+2021-06-29 08:39:21 INFO  Application started on port 3001 
+2021-06-29 08:40:15 INFO  MongoDB is connected 
+2021-06-29 08:40:15 INFO  Application started on port 3001 
+2021-06-29 08:53:20 INFO  MongoDB is connected 
+2021-06-29 08:53:20 INFO  Application started on port 3001 
+2021-06-29 08:55:15 INFO  MongoDB is connected 
+2021-06-29 08:55:15 INFO  Application started on port 3001 
+2021-06-29 08:59:14 INFO  MongoDB is connected 
+2021-06-29 08:59:14 INFO  Application started on port 3001 
+2021-06-29 08:59:59 INFO  MongoDB is connected 
+2021-06-29 08:59:59 INFO  Application started on port 3001 
+2021-06-29 09:01:44 INFO  MongoDB is connected 
+2021-06-29 09:01:44 INFO  Application started on port 3001 
+2021-06-29 09:03:48 INFO  MongoDB is connected 
+2021-06-29 09:03:48 INFO  Application started on port 3001 
+2021-06-29 09:05:21 INFO  MongoDB is connected 
+2021-06-29 09:05:21 INFO  Application started on port 3001 
+2021-06-29 09:07:03 INFO  MongoDB is connected 
+2021-06-29 09:07:03 INFO  Application started on port 3001 
+2021-06-29 09:08:17 INFO  MongoDB is connected 
+2021-06-29 09:08:17 INFO  Application started on port 3001 
+2021-06-29 09:08:21 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  }
+} 
+2021-06-29 09:21:03 INFO  MongoDB is connected 
+2021-06-29 09:21:03 INFO  Application started on port 3001 
+2021-06-29 09:21:11 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk0NjkwMSwiZXhwIjoxNjI1MDMzMzAxfQ.uCJ0voKp7tUKjqFe9pvT5aZPCjCugulFNie-FbtTm2o"
+  }
+} 
+2021-06-29 09:22:01 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk0NzY3MSwiZXhwIjoxNjI1MDM0MDcxfQ.7O0xL2O7BE9sFYkcZAcs4NR_-Ekd0pZwi-JvAeJGyMc"
+  }
+} 
+2021-06-29 16:25:13 INFO  MongoDB is connected 
+2021-06-29 16:25:13 INFO  Application started on port 3001 
+2021-06-29 16:25:49 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk0NzY3MSwiZXhwIjoxNjI1MDM0MDcxfQ.7O0xL2O7BE9sFYkcZAcs4NR_-Ekd0pZwi-JvAeJGyMc"
+  }
+} 
+2021-06-29 16:26:12 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk0NzY3MSwiZXhwIjoxNjI1MDM0MDcxfQ.7O0xL2O7BE9sFYkcZAcs4NR_-Ekd0pZwi-JvAeJGyMc"
+  }
+} 
+2021-06-29 16:26:15 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk3MzE3MiwiZXhwIjoxNjI1MDU5NTcyfQ.Fxk-ecTtL2T6lqo82ZylHHYY2DWqkD7PiORXjnc0S8w"
+  }
+} 
+2021-06-29 16:27:36 INFO  MongoDB is connected 
+2021-06-29 16:27:36 INFO  Application started on port 3001 
+2021-06-29 16:32:42 INFO  MongoDB is connected 
+2021-06-29 16:32:42 INFO  Application started on port 3001 
+2021-06-29 16:32:51 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-29 16:32:55 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-29 16:33:05 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {}
+} 
+2021-06-29 16:33:08 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk3MzU4NSwiZXhwIjoxNjI1MDU5OTg1fQ.8QeUC26alEh6P72_8e2ewRWLKz7INAaNabYIReyseo8"
+  }
+} 
+2021-06-29 16:33:58 INFO  MongoDB is connected 
+2021-06-29 16:33:58 INFO  Application started on port 3001 
+2021-06-29 16:35:28 INFO  MongoDB is connected 
+2021-06-29 16:35:28 INFO  Application started on port 3001 
+2021-06-29 16:36:19 INFO  MongoDB is connected 
+2021-06-29 16:36:19 INFO  Application started on port 3001 
+2021-06-29 16:37:27 INFO  MongoDB is connected 
+2021-06-29 16:37:27 INFO  Application started on port 3001 
+2021-06-29 16:38:12 INFO  MongoDB is connected 
+2021-06-29 16:38:12 INFO  Application started on port 3001 
+2021-06-29 16:38:21 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk3MzU4NSwiZXhwIjoxNjI1MDU5OTg1fQ.8QeUC26alEh6P72_8e2ewRWLKz7INAaNabYIReyseo8"
+  }
+} 
+2021-06-29 16:41:37 INFO  MongoDB is connected 
+2021-06-29 16:41:37 INFO  Application started on port 3001 
+2021-06-29 16:41:49 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDViZmU5ODIxNWIzMzgxYzM0YzlmYyIsImVtYWlsIjoidGdtQGdtYWlsLmNvbSIsImlhdCI6MTYyNDk3MzkwMSwiZXhwIjoxNjI0OTczOTMxfQ.ymjYHwt3sm1ICMse3q3P7FDsE72lzX7R55GlhATx2Io"
+  }
+} 
+2021-06-30 09:34:15 INFO  MongoDB is connected 
+2021-06-30 09:34:15 INFO  Application started on port 3001 
+2021-06-30 09:34:54 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-30 09:36:30 INFO  MongoDB is connected 
+2021-06-30 09:36:30 INFO  Application started on port 3001 
+2021-06-30 09:36:40 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-30 09:38:10 INFO  MongoDB is connected 
+2021-06-30 09:38:10 INFO  Application started on port 3001 
+2021-06-30 09:38:11 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-30 09:39:15 INFO  MongoDB is connected 
+2021-06-30 09:39:15 INFO  Application started on port 3001 
+2021-06-30 09:39:19 INFO  {
+  "method": "GET",
+  "url": "/me",
+  "query": {},
+  "body": {},
+  "cookies": {}
+} 
+2021-06-30 09:40:07 INFO  {
+  "method": "POST",
+  "url": "/login",
+  "query": {},
+  "body": {
+    "email": "tgm@gmail.com",
+    "password": "tgm@gmail.com"
+  },
+  "cookies": {}
+} 
