@@ -8,7 +8,28 @@
 		<title>SocketIO</title>
 	</head>
 	<body>
-		<h2>Welcome to SocketIO client</h2>
+		<div class="container">
+			<div class="flex-wrapper flex-direction-column">
+				<h2>Welcome to SocketIO client</h2>
+				<div class="connection-buttons-block">
+					<button
+						class="connection-buttons-block__button"
+						id="connect"
+					>
+						Подключиться
+					</button>
+					<button
+						class="connection-buttons-block__button"
+						id="disconnect"
+					>
+						Отключиться
+					</button>
+				</div>
+				<div>
+					<span class="connection-info">Вы не подключены</span>
+				</div>
+			</div>
+		</div>
 		<script src="socket.io.min.js"></script>
 		<script src="script.js"></script>
 	</body>

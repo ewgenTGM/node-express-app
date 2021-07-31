@@ -10,15 +10,15 @@ import useLogger from './middlewares/useLogger';
 import useAuth from './middlewares/useAuth';
 import { connectDb } from './connectMongoDb';
 import http from 'http';
-import { Server } from 'socket.io';
+
 import path from 'path';
 import { configireIO } from './configureIO';
 import { staticRouter } from './routers/staticRouter';
+import { Server } from 'socket.io';
 
 const app = express();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer);
-configireIO(io);
 
 const PORT = process.env.PORT || config.get('PORT');
 
@@ -41,6 +41,7 @@ async function start() {
 		httpServer.listen(PORT, () => {
 			logger.info(`Application started on port ${PORT}`);
 		});
+		configireIO(io);
 	} catch (e) {
 		logger.error(e.message);
 	}

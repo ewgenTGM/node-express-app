@@ -6,19 +6,18 @@ export function configireIO(
 	io: Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap>
 ) {
 	io.on('connect', onConnect);
-	io.on('disconnect', onDisconnect);
 }
 
 function onConnect(
 	socket: Socket<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap>
 ): void {
 	logger.info(`Socket ${socket.id} connected.`);
-	socket.emit('Connect', { message: 'Hello! You are connected!' });
-}
-
-function onDisconnect(
-	socket: Socket<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap>
-): void {
-	logger.info(`Socket ${socket.id} disconnected.`);
-	socket.emit('Connect', { message: 'Bye! See you soon!' });
+	socket.emit('Connect', {
+		message: 'Hello! You are connected!',
+		id: socket.id,
+	});
+	socket.on('disconnect', () => {
+		logger.info(`Socket ${socket.id} disconnected.`);
+		socket.emit('Disconnect', { message: 'Bye! See you soon!' });
+	});
 }

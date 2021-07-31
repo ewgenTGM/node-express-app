@@ -1,3 +1,29 @@
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.container {
+	max-width: 1200px;
+	margin: 15px auto;
+}
+
+.flex-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.flex-direction-column {
+	flex-direction: column;
+}
+
+.flex-direction-row {
+	flex-direction: row;
+}
+
+.connection-info {
+}
+
+.connection-info__info {
+	font-size: 8px;
+	text-align: center;
+}
